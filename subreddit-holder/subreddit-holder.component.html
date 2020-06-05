@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="col-md-12 col-12 col-lg-12 col-xl-12">
+        <app-subreddit-header></app-subreddit-header>
+    </div>
+
+    <div class="col-md-7 col-7 col-lg-7 col-xl-7">
+        <div class="posts" *ngIf="creatingNew; else createPost">
+            <app-subreddit></app-subreddit>
+        </div>
+
+        <div class="createPost">
+            <ng-template #createPost>
+                <app-create-post></app-create-post>
+            </ng-template>
+
+        </div>
+    </div>
+
+    <div class="col-md-3 col-3 col-lg-3 col-xl-3">
+        <br>
+        <div class="ifLoggedIn" style="margin-left: 7%;">
+            <button class="btn-default btn-lg btn postbtn" (click)="creatingNew = !creatingNew">
+                Make a post
+            </button>
+        </div>
+
+        <app-subreddit-side></app-subreddit-side>
+    </div>
+</div>

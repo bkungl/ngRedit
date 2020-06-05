@@ -1,0 +1,21 @@
+.imgpic {
+    max-width: 75px;
+    max-height: 75px;
+}
+
+.quickPic {
+    margin-left: -12%;
+}
+
+.title {
+    margin-left: 50px;
+}
+
+.hr {
+    border-color: aliceblue;
+    border-width: 2px;
+}
+
+.votes {
+    position: absolute;
+}

@@ -1,0 +1,56 @@
+<div class="container">
+    <br>
+
+    <div class="login">
+        <!--<button class="btn-default btn-lg btn centerLog">
+            Log in
+        </button>-->
+        <div *ngIf="afAuth.authState | async; let user; else showLogin">
+            <h1>Hello {{ user.displayName }}!</h1>
+            <button (click)="logout()">Logout</button>
+        </div>
+        <ng-template #showLogin>
+            <p>Please login.</p>
+            <button (click)="login()">Login with Google</button>
+            <br>
+            <br>
+            <div class="loginPass()">
+                <input [(ngModel)]="loginEmail" placeholder="Enter email">
+                <input [(ngModel)]="loginPassword" placeholder="Enter password" type="password">
+                <br>
+                <button (click)="loginPass()">Login with email and password</button>
+                <br>
+            </div>
+            <br>
+            <div class="createNewUser()">
+                <input [(ngModel)]="createEmail" placeholder="Enter email">
+                <input [(ngModel)]="createPassword" placeholder="Create password" type="password">
+                <br>
+                <button (click)="createNewUser()">Create new email/pass combo</button>
+            </div>
+
+
+        </ng-template>
+    </div>
+    <br>
+
+    <div class="makePost">
+        <br>
+        <div class="ifLoggedIn">
+            <button class="btn-default btn-lg btn postbtn" (click)="sendMsg()">
+                Make a post
+            </button>
+        </div>
+        <div class="ifNotLoggedIn">
+            <h4>Log in above to submit new content!</h4>
+        </div>
+        <br>
+    </div>
+
+    <div class="wholesomeComment">
+        <h4>Wholesome comment of the day:</h4>
+        <h5>"I'd like to thank not only God, but Jesus."</h5>
+        <h6> -Justin Beiber, 1/1/2017</h6>
+    </div>
+
+</div>

@@ -1,0 +1,81 @@
+<!--<div class="container ">
+    <div class="header">
+
+    </div>
+
+    <div class="postContainer col-lg-7 col-md-7 col-12">
+        <div class="forloop" *ngFor="let post of postArray let i = index" style="margin-top: 5%;">
+            <div class="votes col-lg-2" style="min-width: 5%;">
+                <button class="btn upvote" (click)="upVote(i)">
+                    +
+                </button>
+                <p style="padding-left: 12px;">{{post.upvotes - post.downvotes}}</p>
+                <button class="btn downvote" (click)="downVote(i)">
+                    -
+                </button>
+            </div>
+
+            <div class="seperator col-lg-1" style="min-height: 0px;">
+            </div>
+
+            <div class="buttonHolder col-lg-9" style="margin-left: 0%">
+                <button class="btn">
+                    <a routerLink="/{{url}}/{{post.id}}">
+                        <div class=" quickPic col-lg-1 col-md-1 ">
+                            <img src={{post.picture}} class="imgpic ">
+                        </div>
+                        <div class="title col-lg-4 col-md-4 ">
+                            <h4>{{post.title}}</h4>
+                            <div class="submissionInfo ">
+                                <div class="col-md-2 col-lg-2 col-2 ">
+                                    <h6 class="col-md-2 col-lg-2 col-2 ">Submitted by: Brian &nbsp; &nbsp; &nbsp; Time: 12:06</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </button>
+            </div>
+
+            <br>
+            <hr>
+        </div>
+    </div>
+</div>-->
+
+
+
+<div class="container">
+    <div class="posts col-lg-7 col-md-7 col-12 col-xl-7">
+        <div class="forloop" *ngFor="let res of postArray let i = index" style="margin-top: 5%;">
+            <div class="holder" style="outline-style: solid; outline-width: 1px; min-height: 110px;">
+                <div class="votes" style="min-width: 5%;">
+
+                    <p style="margin-left: 100%; padding-top: 40px;">{{res.upvotes - res.downvotes}}</p>
+
+                </div>
+                <div class="post col-7 col-xl-7 col-md-7 col-lg-7">
+                    <button class="btn" style="margin-left: 10%;">
+                        <a routerLink="/{{url}}/{{res.id}}">
+                            <div class="quickPic col-lg-1 col-md-1" style="padding-top: 25px;">
+                                <img src={{res.picture}} class="imgpic">
+                            </div>
+                            <div class="title col-lg-4 col-md-4">
+
+                                <h4>{{res.title}}</h4>
+                                <div class="submissionInfo">
+                                    <div class="col-md-12 col-lg-12 col-12">
+                                        <h6 class="">Submitted by: {{res.user}}</h6>
+                                        <h6>Time: {{res.time}}</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                    </button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
