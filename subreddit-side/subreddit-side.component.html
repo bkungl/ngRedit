@@ -1,0 +1,26 @@
+<div class="container">
+    <br>
+
+    <div class="login" *ngIf="loggednIn == false">
+        <button class="btn-default btn-lg btn centerLog">
+            Log in
+        </button>
+    </div>
+    <br>
+
+    <div class="makePost">
+        <br>
+
+        <div class="ifNotLoggedIn" *ngIf="loggedIn == false">
+            <h4>Log in above to submit new content!</h4>
+        </div>
+        <br>
+    </div>
+
+    <div class="wholesomeComment">
+        <h4>Wholesome comment of the day:</h4>
+        <h5>"I'd like to thank not only God, but Jesus."</h5>
+        <h6> -Justin Beiber, 1/1/2017</h6>
+    </div>
+
+</div>
