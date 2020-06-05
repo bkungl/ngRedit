@@ -1,0 +1,25 @@
+<div class="container">
+    <br>
+    <div class="submissionHelp">
+        <h2>Create your post </h2>
+    </div>
+    <br>
+    <br>
+    <div class="inputs" style="margin-top: 100px;">
+        <input placeholder="Enter a title" [(ngModel)]="title" size="50px;">
+        <br>
+        <br>
+        <input placeholder="Enter a description" [(ngModel)]="description" size="50px;">
+        <br>
+        <br>
+        <input placeholder="Enter a picture URL (optional)" [(ngModel)]="picture" size="50px;">
+    </div>
+    <br>
+    <div class="submit">
+        <button (click)="getID()">
+            <a router-link="/">
+                Submit to {{subreddit}}
+            </a>
+        </button>
+    </div>
+</div>
