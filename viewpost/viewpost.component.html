@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="col-md-12 col-12 col-lg-12 col-xl-12">
+        <app-subreddit-header></app-subreddit-header>
+    </div>
+
+    <div class="col-md-7 col-7 col-lg-7 col-xl-7">
+        <div class="container col-lg-12 col-md-12 col-xl-12 col-12">
+            <div class="head">
+                <div class="score col-lg-2 col-md-2 col-2 col-xl-2">
+                    <br>
+                    <button class=" upvote" (click)="upVotePost()">
+                        +
+                    </button>
+                    <p style="padding-left: 12px;">{{post.upvotes - post.downvotes}}</p>
+                    <button class=" downvote" (click)="downVotePost(i)">
+                        -
+                    </button>
+                </div>
+
+                <div class="title col-lg-10 col-md-10 col-10 col-xl-10">
+                    <h2>{{post.title}}</h2>
+                </div>
+
+
+
+            </div>
+            <div class="body" style="margin-left: 15%;">
+                <div class="image">
+                    <img src={{post.picture}} class="img">
+                </div>
+                <br>
+                <div class="description">
+                    <h4>{{post.description}}</h4>
+                </div>
+
+
+                <div class="submissionDetails">
+                    <h6>Posted by <span style="color: deepskyblue">{{post.user}}</span>, time: {{post.time}}</h6>
+                </div>
+
+                <div class="postBtns">
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <br>
+
+            <div class="newcomment">
+                <input style="height: 50px; width: 100%;" [(ngModel)]="commentInput" placeholder="Enter a comment.">
+
+            </div>
+            <br>
+
+            <div>
+                <button class="" (click)="submitNewComment() ">
+                    Submit Comment
+                </button>
+            </div>
+            <!-- <ng-template #other>
+                <button class="" (click)="submitNewComment() ">
+                    Submit Comment
+                </button>
+            </ng-template>-->
+
+            <br>
+
+            <hr>
+
+            <div class="comments" *ngFor="let comment of comments let i=index">
+
+                <div class="individual " style="outline-color:darkblue; outline-width:thin; outline-style: dotted; ">
+                    <div class="score col-lg-2 col-md-2 col-2 col-xl-2 ">
+                        <button class="btn upvote " (click)="upVoteComment(i) ">
+                            +
+                        </button>
+                        <p style="padding-left: 12px; ">{{comment.upvotes - comment.downvotes}}</p>
+                        <button class="btn downvote " (click)="downVoteComment(i) ">
+                            -
+                        </button>
+                    </div>
+                    <div class="comment " style="padding-top: 28px; ">
+                        <h5>{{comment.comment}}</h5>
+                        <h6>Posted by: {{comment.poster}}, time: {{comment.time}}</h6>
+                    </div>
+                    <br>
+                    <br>
+
+                </div>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-3 col-lg-3 col-xl-3">
+        <app-subreddit-side></app-subreddit-side>
+    </div>
+</div>
