@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="posts col-lg-7 col-md-7 col-12 col-xl-7">
+        <div class="forloop" *ngFor="let res of result let i = index" style="margin-top: 5%;">
+            <div class="holder" style="outline-style: solid; outline-width: 1px; min-height: 110px;">
+                <div class="votes" style="min-width: 5%; margin-left: 2%; margin-top: 10px;">
+                    <div class="btns" style="z-index: 2">
+                        <!--<button class="upvote" (click)="upVote(i)" style="z-index: 2; position: relative;">
+                            +
+                        </button>-->
+                        <p style="padding-left: 12px; padding-top: 33px;">{{res.upvotes-res.downvotes}}</p>
+                        <!--<button class="downvote" (click)="downVote(i)" style="z-index: 2; position: relative;">
+    -
+</button>-->
+                    </div>
+
+                </div>
+                <div class="post col-7 col-xl-7 col-md-7 col-lg-7">
+                    <button class="btn" style="margin-left: 10%;">
+                        <a routerLink="/{{res.sub}}/{{res.id}}">
+                            <div class="quickPic col-lg-1 col-md-1">
+                                <img src={{res.picture}} class="imgpic" style="padding-top: 30px;">
+                            </div>
+                            <div class="title col-lg-4 col-md-4">
+
+                                <h4>{{res.title}}</h4>
+                                <div class="submissionInfo">
+                                    <div class="col-md-12 col-lg-12 col-12">
+                                        <h6 class="">Submitted by: {{res.user}}</h6>
+                                        <h6>Time: {{res.time}}</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                    </button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

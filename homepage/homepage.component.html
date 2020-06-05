@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-md-12 col-12 col-lg-12 col-xl-12">
+        <app-home-header></app-home-header>
+    </div>
+
+    <div class="col-md-7 col-7 col-lg-7 col-xl-7">
+        <div class="home" *ngIf="creatingNew; else other_content">
+            <app-home-posts></app-home-posts>
+        </div>
+        <div class="col-md-7 col-7 col-lg-7 col-xl-7">
+            <ng-template #other_content>
+                <div class="container col-md-12 col-12 col-lg-12 col-xl-12">
+                    <br>
+                    <div class="information">
+                        <h3>Create a new subreddit</h3>
+                        <h5>Create the future of digital sharing on the topic of your choice!</h5>
+                    </div>
+                    <br>
+
+                    <div class="inputs">
+                        <input placeholder="Enter a new subreddit" [(ngModel)]="subredditInput">
+
+                        <button (click)="submitNew(); creatingNew = !creatingNew">Submit new Subreddit</button>
+                    </div>
+
+                </div>
+            </ng-template>
+        </div>
+
+    </div>
+
+    <div class="col-md-3 col-3 col-lg-3 col-xl-3">
+        <br>
+        <button (click)="creatingNew = !creatingNew" class="btn-default btn-lg btn postbtn" style="margin-left: 5%; min-width: 134%;">New Subreddit</button>
+        <br>
+        <app-home-side></app-home-side>
+    </div>
+</div>
